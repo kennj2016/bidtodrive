@@ -1,0 +1,14 @@
+.show-on-pc,.show-on-mobile,.hide-on-tablet{display:none !important;}
+
+.content{max-width:748px;}
+.grid{width:790px;}
+.box{margin:25px 27px 0px 0px;}
+
+.media-box-folders-wrap{width:211px;}
+.media-box-folders{width:211px;}
+.media-box-options{margin-left:211px;}
+.media-box-files-wrap{margin-left:211px;}
+.media-box-files{padding-left:5px;}
+.media-box-file{margin-left:20px;}
+
+.site-media-input .preview{width:103px;}

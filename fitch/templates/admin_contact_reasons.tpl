@@ -1,0 +1,1 @@
+{include file="includes/admin/manage_records.tpl"}

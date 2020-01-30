@@ -1,0 +1,7 @@
+<?php /* Smarty version 2.6.31, created on 2020-01-03 04:49:06
+         compiled from includes/admin/breadcrumbs.tpl */ ?>
+<?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'includes/admin/breadcrumbs.tpl', 11, false),)), $this); ?>
+<?php echo '';  $this->assign('DELIM', " : ");  echo '<div class="bread-crumb">';  $this->assign('url', "/admin");  echo '<a href="';  echo $this->_tpl_vars['url'];  echo '">Administration</a>';  $this->assign('parent', $this->_tpl_vars['admin_tools']['parent_breadcrumbs']);  echo '';  if ($this->_tpl_vars['parent']):  echo '';  $_from = $this->_tpl_vars['parent']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['item']):
+ echo '';  $this->assign('url', ($this->_tpl_vars['url'])."/".($this->_tpl_vars['item']['url']));  echo '';  echo $this->_tpl_vars['DELIM'];  echo '<a href="';  echo $this->_tpl_vars['url'];  echo '/">';  echo ((is_array($_tmp=$this->_tpl_vars['item']['title'])) ? $this->_run_mod_handler('escape', true, $_tmp) : smarty_modifier_escape($_tmp));  echo '</a>';  endforeach; endif; unset($_from);  echo '';  endif;  echo '';  if ($this->_tpl_vars['admin_tools']['current_breadcrumb']):  echo '';  echo $this->_tpl_vars['DELIM'];  echo '';  echo ((is_array($_tmp=$this->_tpl_vars['admin_tools']['current_breadcrumb'])) ? $this->_run_mod_handler('escape', true, $_tmp) : smarty_modifier_escape($_tmp));  echo '';  endif;  echo '</div>'; ?>

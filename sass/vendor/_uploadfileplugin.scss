@@ -1,0 +1,169 @@
+.module-uploader{
+  width: 100%;
+  @include flexbox;
+  @include align-items(flex-start);
+  @include breakpoint(mobile-large){
+    display: block;
+  }
+  & * {border-color: inherit}
+  .fileUploadError{
+    margin: 0 !important;
+  }
+  .fileUpload {
+    position: relative;
+    white-space: nowrap;
+    text-transform: uppercase;
+    background-color: $secondary-color;
+    margin-right: 10px;
+    max-width: 130px;
+    @include transition-treatment_1;
+
+    &:after {
+      position: absolute;
+      transition: .3s;
+      content: '';
+      width: 0;
+      left: 50%;
+      bottom: 0;
+      height: 3px;
+      background: rgba(0,0,0,0.35);
+    }
+    &:hover{
+      border-color: $secondary-color;
+      color: $primary-color;
+      background-color: #fff;
+      &:after {
+        width: 100%;
+        left: 0;
+      }
+
+    }
+    &.black {
+      background-color: $color-2-alt-1;
+    }
+    &.blue {
+      background-color: $primary-color;
+    }
+
+
+    @include breakpoint(mobile-large){
+      margin-right: 0;
+      max-width: 100%;
+      span{
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+  .fileUpload input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+  }
+  .progress {
+    margin-bottom: 0;
+    display: none;
+  }
+  .fileUpload{
+    @include flexbox;
+    position: relative;
+    padding: 10px;
+    @include box-treatment;
+    width: auto;
+
+    span{
+      line-height: 30px;
+      display: block;
+      padding: 0 10px;
+      @include font-size(13);
+      text-transform: uppercase;
+    }
+    .icon{
+      width: 20px;
+      height: 20px;
+      padding: 3px;
+      margin: 0 5px 0 0;
+
+      svg{
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .list-group{
+    @include flex(1);
+
+    .list-group-item{
+      padding: 10px 0;
+      &.paste{
+        .closed{
+          @include opacity(0);
+          pointer-events: none;
+        }
+      }
+      div.holder{
+        padding: 0 !important;
+        @include box-treatment;
+        @include flexbox;
+        @include justify-content(space-between);
+        @include align-items(center);
+        @include flex-wrap(nowrap);
+        @include flex-direction(row);
+        width: 100%;
+        white-space: nowrap;
+      }
+      span{
+        display: inline-block;
+        line-height: 30px;
+      }
+      .name{
+        @include flexbox;
+        span{
+          @include font-size(12);
+          font-weight: 300;
+        }
+        & + div{
+          @include flexbox;
+        }
+      }
+
+      .icon{
+        width: 20px;
+        height: 20px;
+        margin: auto;
+        @include flexbox;
+        @include align-content(center);
+        svg{
+          margin: auto;
+          width: 20px;
+          height: 20px;
+          fill: #fff;
+        }
+      }
+      form, .list-group{ width: 100%;}
+      .closed, .preview{
+        width: 20px;
+        height: 20px;
+        @include flexbox;
+        @include justify-content(center);
+        @include align-content(center);
+        color: #fff;
+        font-size: 20px;
+        line-height: 16px;
+        text-align: center;
+        margin-left: 5px;
+      }
+
+    }
+  }
+
+
+}

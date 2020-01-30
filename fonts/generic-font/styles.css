@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "generic-font";
+  src:url("fonts/generic-font.eot");
+  src:url("fonts/generic-font.eot?#iefix") format("embedded-opentype"),
+    url("fonts/generic-font.woff") format("woff"),
+    url("fonts/generic-font.ttf") format("truetype"),
+    url("fonts/generic-font.svg#generic-font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "generic-font" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "generic-font" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\e000";
+}
+.icon-facebook-square:before {
+  content: "\e001";
+}
+.icon-google-plus:before {
+  content: "\e002";
+}
+.icon-google-plus-square:before {
+  content: "\e003";
+}
+.icon-share-square:before {
+  content: "\e004";
+}
+.icon-share-square-o:before {
+  content: "\e005";
+}
+.icon-twitter:before {
+  content: "\e006";
+}
+.icon-twitter-square:before {
+  content: "\e007";
+}
+.icon-arrow-circle-down:before {
+  content: "\e008";
+}
+.icon-arrow-circle-left:before {
+  content: "\e009";
+}
+.icon-arrow-circle-o-down:before {
+  content: "\e00a";
+}
+.icon-arrow-circle-o-left:before {
+  content: "\e00b";
+}
+.icon-arrow-circle-o-right:before {
+  content: "\e00c";
+}
+.icon-arrow-circle-o-up:before {
+  content: "\e00d";
+}
+.icon-arrow-circle-right:before {
+  content: "\e00e";
+}
+.icon-arrow-circle-up:before {
+  content: "\e00f";
+}
+.icon-arrow-down:before {
+  content: "\e010";
+}
+.icon-arrow-right:before {
+  content: "\e011";
+}
+.icon-arrow-left:before {
+  content: "\e012";
+}
+.icon-arrow-up:before {
+  content: "\e013";
+}
+.icon-arrows:before {
+  content: "\e014";
+}
+.icon-sign-out:before {
+  content: "\e015";
+}
+.icon-sign-in:before {
+  content: "\e016";
+}
+.icon-arrows-v:before {
+  content: "\e017";
+}
+.icon-arrows-h:before {
+  content: "\e018";
+}
+.icon-arrows-alt:before {
+  content: "\e019";
+}
+.icon-exchange:before {
+  content: "\e01a";
+}
+.icon-arrow-down-b:before {
+  content: "\e01b";
+}
+.icon-arrow-right-b:before {
+  content: "\e01c";
+}
+.icon-ios-play:before {
+  content: "\e01d";
+}
+.icon-arrow-up-b:before {
+  content: "\e01e";
+}
+.icon-arrow-left-b:before {
+  content: "\e01f";
+}
+.icon-chevron-down:before {
+  content: "\e020";
+}
+.icon-chevron-right:before {
+  content: "\e021";
+}
+.icon-chevron-up:before {
+  content: "\e022";
+}
+.icon-arrow-resize:before {
+  content: "\e023";
+}
+.icon-ios-play-outline:before {
+  content: "\e024";
+}
+.icon-arrow-expand:before {
+  content: "\e025";
+}
+.icon-search:before {
+  content: "\e026";
+}
+.icon-plus-circle:before {
+  content: "\e027";
+}
+.icon-plus:before {
+  content: "\e028";
+}
+.icon-minus:before {
+  content: "\e029";
+}
+.icon-minus-circle:before {
+  content: "\e02a";
+}
+.icon-bars:before {
+  content: "\e02b";
+}
+.icon-list-ul:before {
+  content: "\e02c";
+}
+.icon-lock:before {
+  content: "\e02d";
+}
+.icon-folder:before {
+  content: "\e02e";
+}
+.icon-star:before {
+  content: "\e02f";
+}
+.icon-star-o:before {
+  content: "\e030";
+}
+.icon-social-youtube-outline:before {
+  content: "\e031";
+}
+.icon-quote-left:before {
+  content: "\e032";
+}
+.icon-quote-right:before {
+  content: "\e033";
+}
+.icon-check:before {
+  content: "\e034";
+}
+.icon-instagram:before {
+  content: "\e035";
+}
+.icon-instagrem:before {
+  content: "\e036";
+}
+.icon-envelope:before {
+  content: "\e037";
+}
+.icon-chatbubble:before {
+  content: "\e038";
+}
+.icon-comment:before {
+  content: "\e039";
+}

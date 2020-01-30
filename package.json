@@ -1,0 +1,30 @@
+{
+  "name": "socket",
+  "version": "1.0.0",
+  "description": "bidtodrive",
+  "main": "/js/main/realtime.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ioredis": "^4.14.1",
+    "pm2": "^3.5.1",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "no"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennj2016/bidtodrive.vn.git"
+  },
+  "keywords": [
+    "bidtodrive"
+  ],
+  "author": "bidtodrive",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kennj2016/bidtodrive.vn/issues"
+  },
+  "homepage": "https://github.com/kennj2016/bidtodrive.vn#readme"
+}

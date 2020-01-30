@@ -1,0 +1,188 @@
+$base-font-weight: 400;
+$brand-font-1: 'Fira Sans', sans-serif;
+$brand-font-2: 'Open Sans', sans-serif;
+
+/* Brand Fonts & Treatment -------------------------------------*/
+
+h1 {
+    font:{family: $brand-font-1;}
+    @include font-size(28);
+    line-height: 1;
+    font-weight: 400;
+    margin: 10px 0 5px 0;
+    color: $color-1;
+}
+
+h2 {
+    font:{family: $brand-font-1;}
+    @include font-size(26);
+    line-height: 1;
+    font-weight: 400;
+    margin: 10px 0 5px 0;
+    color: $font-color;
+}
+
+h3 {
+    font:{family: $brand-font-1}
+    @include font-size(24);
+    line-height: 1;
+    font-weight: 400;
+    margin: 10px 0 5px 0;
+    color: $color-1;
+}
+
+h4 {
+    font:{family: $brand-font-1}
+    @include font-size(22);
+    line-height: 1;
+    font-weight: 400;
+    margin: 10px 0 5px 0;
+}
+
+h5 {
+    font:{family: $brand-font-1}
+    @include font-size(20);
+    line-height: 1;
+    font-weight: 400;
+    margin: 10px 0 5px 0;
+    color: $color-1;
+}
+
+h6 {
+    font:{family: $brand-font-1}
+    @include font-size(16);
+    line-height: 1;
+    font-weight: 400;
+    margin: 10px 0 5px 0;
+}
+
+p, .p-basic {
+
+    font:{family: $brand-font-2;}
+    @include font-size(12);
+    line-height: 1.5;
+    font-weight: 300;
+    margin: 0 0 15px 0;
+    position: relative;
+    width: 100%;
+
+    a:hover, a.link:hover {
+      text-decoration: underline;
+    }
+
+}
+
+.link {
+  @include transition-treatment_1;
+  text-decoration: none;
+  @include font-size(12);
+
+  &:hover, &.hovered{
+    text-decoration: none;
+  }
+
+  &:active {
+    color: inherit;
+  }
+
+  &.visited{
+
+  }
+}
+b, strong{
+  font-weight: 700;
+  @include font-size(12);
+  color: $font-color;
+}
+
+a {
+    @extend .link;
+    outline: none !important;
+    position: relative;
+    color: $color-1;
+
+    &:visited{
+
+  }
+
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  padding: 10px 0 10px 0;
+
+  li {
+      @extend .p-basic;
+      text-decoration: none;
+      margin: 0 0 5px 0;
+      position: relative;
+      padding: 0 0 0 40px;
+      width: 100%;
+      @include box-treatment;
+
+      &:before {
+          content: "\25CF";
+          font-weight: 400;
+          color: $color-1-alt-2;
+          display: block;
+          position: absolute;
+          left: 20px;
+          top: 0;
+      }
+  }
+}
+
+ol{
+  margin: 0;
+  padding: 10px 0 10px 0;
+  list-style-type: none;
+  counter-reset: point;
+
+  li{
+      @extend .p-basic;
+      text-decoration: none;
+      margin: 0 0 5px 0;
+      list-style: none;
+      width: 100%;
+      @include box-treatment;
+    padding: 0 0 0 40px;
+
+      &:before {
+          counter-increment: point 1;
+          content: counter(point)".";
+          font-weight: 600;
+        color: $color-1-alt-2;
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 0;
+    }
+
+  }
+
+}
+
+em {
+    font-style: italic;
+    position: relative;
+  @include font-size(16);
+}
+
+strong {
+    font-weight: bold;
+    position: relative;
+}
+
+mark {
+    color: $primary-color;
+    background: none;
+    position: relative;
+}
+
+hr {
+    margin: 0;
+    border-bottom: none;
+    position: relative;
+}
+

@@ -1,0 +1,32 @@
+/* Global Elements ---------------------------*/
+
+html {
+    
+    font-size: 80.5%;  // don't change that to use rems  means 16px
+    @include opacity(0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    height: 100%;
+
+}
+
+body {
+    
+    background-color: white;
+    color: $font-color;
+    font-family: $brand-font-1, $brand-font-2, Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    
+}
+
+#main {
+    height: auto;
+  @include box-treatment;
+    
+  img {
+    max-width: 100%;
+  }
+    
+}

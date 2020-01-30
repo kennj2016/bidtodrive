@@ -1,0 +1,215 @@
+RewriteEngine on
+
+#RewriteCond %{HTTP_HOST} facedomain.com$
+#RewriteCond %{HTTPS} off
+#RewriteRule .* http://%{SERVER_NAME}%{REQUEST_URI} [NC,L,QSA]
+
+#RewriteCond %{HTTP_HOST} ^facedomain.com$
+#RewriteCond %{REQUEST_URI} !/server-status
+#RewriteRule ^(.*)$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+#ADMIN PART: START
+
+RewriteRule ^admin/?$ /fitch/index.php?cmd=admin [NC,L,QSA]
+RewriteRule ^admin/login/?$ /fitch/index.php?cmd=admin_login [NC,L,QSA]
+RewriteRule ^admin/logout/?$ /fitch/index.php?cmd=admin_logout [NC,L,QSA]
+
+RewriteRule ^admin/workflow/?$ /fitch/index.php?cmd=admin_workflow [NC,L,QSA]
+
+RewriteRule ^admin/site_vars/?$ /fitch/index.php?cmd=admin_site_vars [NC,L,QSA]
+RewriteRule ^admin/site_vars/(\d+)/?$ /fitch/index.php?cmd=admin_site_vars_edit&id=$1 [NC,L,QSA]
+
+RewriteRule ^admin/site_media/?$ /fitch/index.php?cmd=admin_site_media [NC,L,QSA]
+RewriteRule ^admin/site_media/api/([^\/]+)/?$ /fitch/index.php?cmd=admin_site_media_api&action=$1 [NC,L,QSA]
+RewriteRule ^admin/site_media/add/?$ /fitch/index.php?cmd=admin_site_media_edit [NC,L,QSA]
+RewriteRule ^admin/site_media/(\d+)/?$ /fitch/index.php?cmd=admin_site_media_edit&id=$1 [NC,L,QSA]
+RewriteRule ^admin/site_media/crop/(\d+)/?$ /fitch/index.php?cmd=admin_site_media_crop&id=$1 [NC,L,QSA]
+RewriteRule ^admin/site_media/update_folder/(\d+)/?$ /fitch/index.php?cmd=admin_site_media_update_folder&id=$1 [NC,L,QSA]
+
+RewriteRule ^admin/navigation/?$ /fitch/index.php?cmd=admin_navigation [NC,L,QSA]
+RewriteRule ^admin/navigation/links/?$ /fitch/index.php?cmd=admin_navigation_links [NC,L,QSA]
+
+RewriteRule ^admin/usercontrol/?$ /fitch/index.php?cmd=admin_users&mode=users [NC,L,QSA]
+#RewriteRule ^admin/usercontrol/add/?$ /fitch/index.php?cmd=admin_users_edit&mode=users [NC,L,QSA]
+#RewriteRule ^admin/usercontrol/(\d+)/?$ /fitch/index.php?cmd=admin_users_edit&mode=users&id=$2 [NC,L,QSA]
+
+
+RewriteRule ^admin/(administrators|users)/?$ /fitch/index.php?cmd=admin_users&mode=$1 [NC,L,QSA]
+RewriteRule ^admin/(administrators|users)/add/?$ /fitch/index.php?cmd=admin_users_edit&mode=$1 [NC,L,QSA]
+RewriteRule ^admin/(administrators|users)/(\d+)/?$ /fitch/index.php?cmd=admin_users_edit&mode=$1&id=$2 [NC,L,QSA]
+RewriteRule ^admin/administrators/(\d+)/permissions/?$ /fitch/index.php?cmd=admin_users_permissions&parent_id=$1 [NC,L,QSA]
+RewriteRule ^admin/subscribers/?$ /fitch/index.php?cmd=admin_subscribers [NC,L,QSA]
+
+RewriteRule ^admin/support_tickets/?$ /fitch/index.php?cmd=admin_support_tickets [NC,L,QSA]
+RewriteRule ^admin/support_tickets/add/?$ /fitch/index.php?cmd=admin_support_tickets_edit [NC,L,QSA]
+RewriteRule ^admin/support_tickets/([0-9a-z]+)/?$ /fitch/index.php?cmd=admin_support_tickets_edit&id=$1 [NC,L,QSA]
+
+RewriteRule ^admin/seo_redirect_tool/?$ /fitch/index.php?cmd=admin_seo_redirect_tool [NC,L,QSA]
+RewriteRule ^admin/seo_redirect_tool/add/?$ /fitch/index.php?cmd=admin_seo_redirect_tool_edit [NC,L,QSA]
+RewriteRule ^admin/seo_redirect_tool/(\d+)/?$ /fitch/index.php?cmd=admin_seo_redirect_tool_edit&id=$1 [NC,L,QSA]
+
+RewriteRule ^admin/global_seo_controller/?$ /fitch/index.php?cmd=admin_global_seo_controller [NC,L,QSA]
+RewriteRule ^admin/global_seo_controller/add/?$ /fitch/index.php?cmd=admin_global_seo_controller_edit [NC,L,QSA]
+RewriteRule ^admin/global_seo_controller/(\d+)/?$ /fitch/index.php?cmd=admin_global_seo_controller_edit&id=$1 [NC,L,QSA]
+RewriteRule ^admin/global_seo_controller/positions/?$ /fitch/index.php?cmd=admin_global_seo_controller_positions [NC,L,QSA]
+
+RewriteRule ^admin/robots_editor/?$ /fitch/index.php?cmd=admin_robots_editor [NC,L,QSA]
+
+RewriteRule ^admin/pages/?$ /fitch/index.php?cmd=admin_pages [NC,L,QSA]
+RewriteRule ^admin/pages/add/?$ /fitch/index.php?cmd=admin_pages_edit [NC,L,QSA]
+RewriteRule ^admin/pages/(\d+)/?$ /fitch/index.php?cmd=admin_pages_edit&id=$1 [NC,L,QSA]
+RewriteRule ^admin/pages/(\d+)/autosave/?$ /fitch/index.php?cmd=admin_pages_edit_autosave&id=$1 [NC,L,QSA]
+RewriteRule ^admin/pages/positions/?$ /fitch/index.php?cmd=admin_pages_positions [NC,L,QSA]
+
+RewriteRule ^admin/homepage/settings/?$ /fitch/index.php?cmd=admin_homepage_settings [NC,L,QSA]
+RewriteRule ^admin/homepage/settings/autosave/?$ /fitch/index.php?cmd=admin_homepage_settings_autosave [NC,L,QSA]
+RewriteRule ^admin/homepage/slideshow/?$ /fitch/index.php?cmd=admin_homepage_slideshow [NC,L,QSA]
+RewriteRule ^admin/homepage/slideshow/positions/?$ /fitch/index.php?cmd=admin_homepage_slideshow_positions [NC,L,QSA]
+RewriteRule ^admin/homepage/slideshow/add/?$ /fitch/index.php?cmd=admin_homepage_slideshow_edit [NC,L,QSA]
+RewriteRule ^admin/homepage/slideshow/(\d+)/?$ /fitch/index.php?cmd=admin_homepage_slideshow_edit&id=$1 [NC,L,QSA]
+RewriteRule ^admin/homepage/about/?$ /fitch/index.php?cmd=admin_homepage_about [NC,L,QSA]
+
+RewriteRule ^admin/blog/settings/?$ /fitch/index.php?cmd=admin_blog_settings [NC,L,QSA]
+RewriteRule ^admin/blog/categories/?$ /fitch/index.php?cmd=admin_blog_categories [NC,L,QSA]
+RewriteRule ^admin/blog/categories/add/?$ /fitch/index.php?cmd=admin_blog_categories_edit [NC,L,QSA]
+RewriteRule ^admin/blog/categories/(\d+)/?$ /fitch/index.php?cmd=admin_blog_categories_edit&id=$1 [NC,L,QSA]
+RewriteRule ^admin/blog/categories/(\d+)/autosave/?$ /fitch/index.php?cmd=admin_blog_categories_edit_autosave&id=$1 [NC,L,QSA]
+RewriteRule ^admin/blog/categories/positions/?$ /fitch/index.php?cmd=admin_blog_categories_positions [NC,L,QSA]
+RewriteRule ^admin/blog/posts/?$ /fitch/index.php?cmd=admin_blog_posts [NC,L,QSA]
+RewriteRule ^admin/blog/posts/add/?$ /fitch/index.php?cmd=admin_blog_posts_edit [NC,L,QSA]
+RewriteRule ^admin/blog/posts/(\d+)/?$ /fitch/index.php?cmd=admin_blog_posts_edit&id=$1 [NC,L,QSA]
+RewriteRule ^admin/blog/posts/(\d+)/autosave/?$ /fitch/index.php?cmd=admin_blog_posts_edit_autosave&id=$1 [NC,L,QSA]
+
+RewriteRule ^admin/transactions/?$ /fitch/index.php?cmd=admin_transactions [NC,L,QSA]
+RewriteRule ^admin/transactions/(\d+)/?$ /fitch/index.php?cmd=admin_transactions_view&id=$1 [NC,L,QSA]
+
+RewriteRule ^admin/content_blocks/?$ /fitch/index.php?cmd=admin_content_blocks [NC,L,QSA]
+RewriteRule ^admin/content_blocks/add/?$ /fitch/index.php?cmd=admin_content_blocks_edit [NC,L,QSA]
+RewriteRule ^admin/content_blocks/(\d+)/?$ /fitch/index.php?cmd=admin_content_blocks_edit&id=$1 [NC,L,QSA]
+RewriteRule ^admin/content_blocks/(\d+)/autosave/?$ /fitch/index.php?cmd=admin_content_blocks_edit_autosave&id=$1 [NC,L,QSA]
+RewriteRule ^admin/content_blocks/positions/?$ /fitch/index.php?cmd=admin_content_blocks_positions [NC,L,QSA]
+
+RewriteRule ^admin/auctions/?$ /fitch/index.php?cmd=admin_auctions [NC,L,QSA]
+RewriteRule ^admin/auctions/add/?$ /fitch/index.php?cmd=admin_auctions_edit [NC,L,QSA]
+RewriteRule ^admin/auctions/(\d+)/?$ /fitch/index.php?cmd=admin_auctions_edit&id=$1 [NC,L,QSA]
+RewriteRule ^admin/auctions/(\d+)/autosave/?$ /fitch/index.php?cmd=admin_auctions_edit_autosave&id=$1 [NC,L,QSA]
+RewriteRule ^admin/auctions/positions/?$ /fitch/index.php?cmd=admin_auctions_positions [NC,L,QSA]
+
+RewriteRule ^admin/contact_reasons/?$ /fitch/index.php?cmd=admin_contact_reasons [NC,L,QSA]
+RewriteRule ^admin/contact_reasons/add/?$ /fitch/index.php?cmd=admin_contact_reasons_edit [NC,L,QSA]
+RewriteRule ^admin/contact_reasons/(\d+)/?$ /fitch/index.php?cmd=admin_contact_reasons_edit&id=$1 [NC,L,QSA]
+RewriteRule ^admin/contact_reasons/(\d+)/autosave/?$ /fitch/index.php?cmd=admin_contact_reasons_edit_autosave&id=$1 [NC,L,QSA]
+RewriteRule ^admin/contact_reasons/positions/?$ /fitch/index.php?cmd=admin_contact_reasons_positions [NC,L,QSA]
+
+RewriteRule ^admin/contact/settings/?$ /fitch/index.php?cmd=admin_contact_settings [NC,L,QSA]
+RewriteRule ^admin/contact/settings/autosave/?$ /fitch/index.php?cmd=admin_contact_settings_autosave [NC,L,QSA]
+
+RewriteRule ^admin/login/settings/?$ /fitch/index.php?cmd=admin_login_settings [NC,L,QSA]
+RewriteRule ^admin/login/settings/autosave/?$ /fitch/index.php?cmd=admin_login_settings_autosave [NC,L,QSA]
+
+RewriteRule ^admin/registration/settings/?$ /fitch/index.php?cmd=admin_registration_settings [NC,L,QSA]
+RewriteRule ^admin/registration/settings/autosave/?$ /fitch/index.php?cmd=admin_registration_settings_autosave [NC,L,QSA]
+
+RewriteRule ^admin/email_templates/?$ /fitch/index.php?cmd=admin_email_templates [NC,L,QSA]
+RewriteRule ^admin/email_templates/add/?$ /fitch/index.php?cmd=admin_email_templates_edit [NC,L,QSA]
+RewriteRule ^admin/email_templates/(\d+)/?$ /fitch/index.php?cmd=admin_email_templates_edit&id=$1 [NC,L,QSA]
+RewriteRule ^admin/email_templates/(\d+)/autosave/?$ /fitch/index.php?cmd=admin_email_templates_edit_autosave&id=$1 [NC,L,QSA]
+RewriteRule ^admin/email_templates/positions/?$ /fitch/index.php?cmd=admin_email_templates_positions [NC,L,QSA]
+
+RewriteRule ^admin/about/settings/?$ /fitch/index.php?cmd=admin_about_settings [NC,L,QSA]
+RewriteRule ^admin/about/settings/autosave/?$ /fitch/index.php?cmd=admin_about_settings_autosave [NC,L,QSA]
+
+RewriteRule ^admin/([^\/]+)/settings/?$ /fitch/index.php?cmd=admin_pages_settings&id=$1 [NC,L,QSA]
+
+RewriteRule ^admin/users-request-seller/?$ /fitch/index.php?cmd=admin_users_request_seller [NC,L,QSA]
+
+#ADMIN PART: END
+
+RewriteRule ^site_media/([^\/]+)/?$ /fitch/index.php?cmd=site_media&file=$1 [NC,L,QSA]
+RewriteRule ^site_media/([^\/]+)/([^\/]+)/?$ /fitch/index.php?cmd=site_media&file=$1&size=$2 [NC,L,QSA]
+RewriteCond %{QUERY_STRING} (^|&)download=1 [NC]
+RewriteRule ^media/.+/_orig/.+ - [E=MY_SET_HEADER:1]
+Header set Content-Disposition "Attachment" env=MY_SET_HEADER
+
+RewriteRule ^media/5/m/([^\/]+\.(jpe?g|gif|png))$ watermark.php?filename=$1&size=md&watermark=media/watermark/watermark.png&image=media/5/m/$1 [NC,L]
+RewriteRule ^media/5/md/([^\/]+\.(jpe?g|gif|png))$ watermark.php?filename=$1&size=md&watermark=media/watermark/watermark.png&image=media/5/md/$1 [NC,L]
+RewriteRule ^media/5/mdm/([^\/]+\.(jpe?g|gif|png))$ watermark.php?filename=$1&size=mdm&watermark=media/watermark/watermark.png&image=media/5/mdm/$1 [NC,L]
+RewriteRule ^media/5/ml/([^\/]+\.(jpe?g|gif|png))$ watermark.php?filename=$1&size=ml&watermark=media/watermark/watermark.png&image=media/5/ml/$1 [NC,L]
+RewriteRule ^media/5/mdt/([^\/]+\.(jpe?g|gif|png))$ watermark.php?filename=$1&size=mdt&watermark=media/watermark/watermark.png&image=media/5/mdt/$1 [NC,L]
+RewriteRule ^media/5/l/([^\/]+\.(jpe?g|gif|png))$ watermark.php?filename=$1&size=l&watermark=media/watermark/watermark.png&image=media/5/l/$1 [NC,L]
+RewriteRule ^media/5/nmd/([^\/]+\.(jpe?g|gif|png))$ watermark.php?filename=$1&size=nmd&watermark=media/watermark/watermark.png&image=media/5/nmd/$1 [NC,L]
+RewriteRule ^media/5/bd/([^\/]+\.(jpe?g|gif|png))$ watermark.php?filename=$1&size=bd&watermark=media/watermark/watermark.png&image=media/5/bd/$1 [NC,L]
+RewriteRule ^media/5/_orig/([^\/]+\.(jpe?g|gif|png))$ watermark.php?filename=$1&size=l&watermark=media/watermark/watermark.png&image=media/5/l/$1 [NC,L]
+
+#MAIN SITE PART: START
+
+RewriteRule ^/?$ /fitch/index.php?cmd=homepage [NC,L,QSA]
+RewriteRule ^car_query_api/?$ /fitch/index.php?cmd=car_query_api [NC,L,QSA]
+RewriteRule ^contact-us/?$ /fitch/index.php?cmd=contact [NC,L,QSA]
+RewriteRule ^about-us/?$ /fitch/index.php?cmd=about [NC,L,QSA]
+RewriteRule ^news/?$ /fitch/index.php?cmd=news [NC,L,QSA]
+RewriteRule ^news/category/([^\/]+)/?$ /fitch/index.php?cmd=news&category_url_title=$1 [NC,L,QSA]
+RewriteRule ^news/author/([^\/]+)/?$ /fitch/index.php?cmd=news&author_url_title=$1 [NC,L,QSA]
+RewriteRule ^news/([^\/]+)/?$ /fitch/index.php?cmd=news_details&url_title=$1 [NC,L,QSA]
+RewriteRule ^seller/([^\/]+)/?$ /fitch/index.php?cmd=seller_profile&url_title=$1 [NC,L,QSA]
+RewriteRule ^login/?$ /fitch/index.php?cmd=login [NC,L,QSA]
+RewriteRule ^register/?$ /fitch/index.php?cmd=register [NC,L,QSA]
+RewriteRule ^register/buyer/?$ /fitch/index.php?cmd=register&subaction=buyer_tab [NC,L,QSA]
+RewriteRule ^registration/verify/([^\/]+)/?$ /fitch/index.php?cmd=register&action=verify&hash=$1 [NC,L,QSA]
+RewriteRule ^registration/admin-verify/([^\/]+)/?$ /fitch/index.php?cmd=register&action=admin-verify&hash=$1 [NC,L,QSA]
+RewriteRule ^forgot-password/?$ /fitch/index.php?cmd=forgot_password [NC,L,QSA]
+RewriteRule ^reset-password/([^\/]+)/?$ /fitch/index.php?cmd=reset_password&action=reset&reset_id=$1 [NC,L,QSA]
+RewriteRule ^logout/?$ /fitch/index.php?cmd=logout [NC,L,QSA]
+RewriteRule ^account/?$ /fitch/index.php?cmd=account [NC,L,QSA]
+RewriteRule ^account/info/?$ /fitch/index.php?cmd=account&action=account_info [NC,L,QSA]
+RewriteRule ^account/switch-to-buyer/?$ /fitch/index.php?cmd=switch_account&type=Buyer [NC,L,QSA]
+RewriteRule ^account/switch-to-seller/?$ /fitch/index.php?cmd=switch_account&type=Seller [NC,L,QSA]
+RewriteRule ^account/switch-to-seller-form/?$ /fitch/index.php?cmd=switch_account_seller [NC,L,QSA]
+RewriteRule ^auctions/get-uship-html?$ /fitch/index.php?cmd=get_uship_html [NC,L,QSA]
+RewriteRule ^account/content-blocks/?$ /fitch/index.php?cmd=account&action=account_content_blocks [NC,L,QSA]
+RewriteRule ^account/listings/?$ /fitch/index.php?cmd=account&action=account_listings [NC,L,QSA]
+RewriteRule ^account/security-access/?$ /fitch/index.php?cmd=account_security_access [NC,L,QSA]
+
+RewriteRule ^account/buyer/?$ /fitch/index.php?cmd=account_buyer [NC,L,QSA]
+RewriteRule ^account/buyer/payments/?$ /fitch/index.php?cmd=account_buyer&mode=payments [NC,L,QSA]
+RewriteRule ^account/buyer/watched-listings/?$ /fitch/index.php?cmd=account_buyer&mode=watched_listings [NC,L,QSA]
+RewriteRule ^account/buyer/watched-sellers/?$ /fitch/index.php?cmd=account_buyer&mode=watched_sellers [NC,L,QSA]
+RewriteRule ^account/buyer/bids/?$ /fitch/index.php?cmd=account_buyer&mode=bids [NC,L,QSA]
+RewriteRule ^account/billing-details/?$ /fitch/index.php?cmd=account_buyer_billing_details [NC,L,QSA]
+RewriteRule ^account/notification-settings/?$ /fitch/index.php?cmd=account_buyer_notification_settings [NC,L,QSA]
+RewriteRule ^account/seller-notification-settings/?$ /fitch/index.php?cmd=account_seller_notification_settings [NC,L,QSA]
+RewriteRule ^auctions/?$ /fitch/index.php?cmd=auctions [NC,L,QSA]
+RewriteRule ^auctions/create/?$ /fitch/index.php?cmd=auctions_edit&action=create [NC,L,QSA]
+RewriteRule ^auctions/([^\/]+)/?$ /fitch/index.php?cmd=auctions_details&id=$1 [NC,L,QSA]
+RewriteRule ^auctions/([^\/]+)/bill/?$ /fitch/index.php?cmd=auctions_details_bill&id=$1 [NC,L,QSA]
+RewriteRule ^auctions/([^\/]+)/edit/?$ /fitch/index.php?cmd=auctions_edit&id=$1&action=edit [NC,L,QSA]
+RewriteRule ^auctions/([^\/]+)/relist/?$ /fitch/index.php?cmd=auctions_edit&id=$1&action=relist [NC,L,QSA]
+RewriteRule ^auctions/([^\/]+)/accept-highest-bid/?$ /fitch/index.php?cmd=accept_highest_bid&id=$1 [NC,L,QSA]
+RewriteRule ^license/([^\/]+)/([^\/]+)/?$ /fitch/index.php?cmd=view_license&size=$1&license=$2 [NC,L,QSA]
+RewriteRule ^browser-fallback/?$ /fitch/index.php?cmd=browser_fallback [NC,L,QSA]
+
+RewriteRule ^ajax/account/favorites/?$ /fitch/index.php?cmd=ajax_account_favorites [NC,L,QSA]
+RewriteRule ^ajax/account/seller-favorites/?$ /fitch/index.php?cmd=ajax_account_seller_favorites [NC,L,QSA]
+RewriteRule ^ajax/account/content-blocks/?$ /fitch/index.php?cmd=ajax_account_content_blocks [NC,L,QSA]
+RewriteRule ^ajax/account/notifications/?$ /fitch/index.php?cmd=ajax_account_notifications [NC,L,QSA]
+RewriteRule ^ajax/auctions/cancel-auction/?$ /fitch/index.php?cmd=ajax_auctions_cancel_auction [NC,L,QSA]
+RewriteRule ^ajax/auctions/place-bid/?$ /fitch/index.php?cmd=ajax_auctions_place_bid [NC,L,QSA]
+RewriteRule ^ajax/auctions/buy-now/?$ /fitch/index.php?cmd=ajax_auctions_buy_now [NC,L,QSA]
+RewriteRule ^ajax/auctions/accept/?$ /fitch/index.php?cmd=ajax_auctions_accept [NC,L,QSA]
+RewriteRule ^ajax/contact/?$ /fitch/index.php?cmd=ajax_contact [NC,L,QSA]
+RewriteRule ^ajax/users-switcher/?$ /fitch/index.php?cmd=ajax_users_switcher [NC,L,QSA]
+RewriteRule ^ajax/notification-manual/?$ /fitch/index.php?cmd=ajax_notification_manual [NC,L,QSA]
+
+RewriteRule ^cron/auctions/?$ /fitch/index.php?cmd=cron_auctions [NC,L,QSA]
+RewriteRule ^cron/expiring-auctions/?$ /fitch/index.php?cmd=cron_expiring_auctions [NC,L,QSA]
+RewriteRule ^cron/expiring-licenses/?$ /fitch/index.php?cmd=cron_expiring_licenses [NC,L,QSA]
+RewriteRule ^cron/expiring-cards/?$ /fitch/index.php?cmd=cron_expiring_cards [NC,L,QSA]
+RewriteRule ^cron/expired-cards/?$ /fitch/index.php?cmd=cron_expired_cards [NC,L,QSA]
+
+RewriteRule ^script/sitemap/?$ /fitch/index.php?cmd=script_sitemap [NC,L,QSA]
+RewriteRule ^script/stripe_webhooks/?$ /fitch/index.php?cmd=script_stripe_webhooks [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /fitch/index.php?cmd=page&url_title=$1 [NC,L,QSA]
+
+#MAIN SITE PART: END

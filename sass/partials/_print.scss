@@ -1,0 +1,209 @@
+@media print {
+
+  @page {
+    size: A4 portrait;
+    margin: 2em;
+  }
+
+  body {
+    background: #fff !important;
+    color: $font-color;
+  }
+  a {
+    page-break-inside:avoid
+  }
+  blockquote {
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after:avoid;
+    page-break-inside:avoid
+  }
+  img { page-break-inside:avoid;
+    page-break-after:avoid; }
+
+  table, pre { page-break-inside:avoid }
+  ul, ol, dl  { page-break-before:avoid }
+
+  /* Linkfarbe und Linkverhalten darstellen */
+  a:link, a:visited, a {
+    background: transparent;
+    color: $font-color;
+    text-align: left;
+  }
+
+  a {
+    page-break-inside:avoid
+  }
+
+  a[href^=http]:after {
+    content:" <" attr(href) "> ";
+  }
+
+
+  article a[href^="#"]:after {
+    content: "";
+  }
+
+  nav, aside, .header,  #footer , .footer {
+    display: none !important;
+  }
+
+  html,
+  body,
+  #content,
+  #main{
+    height: auto !important;
+  }
+  /* Wichtige Elemente definieren */
+  p, address, li, dt, dd, blockquote {
+    font-size: 100%
+  }
+
+  /* Zeichensatz fuer Code Beispiele */
+  code, pre { font-family: "Courier New", Courier, mono}
+
+  ul, ol {
+    list-style: square;
+    margin-left: 18pt;
+    margin-bottom: 20pt;
+  }
+
+  li {
+    line-height: 1.6em;
+  }
+
+  .module-bill{
+    padding: 0;
+    .header-box{
+      border-top-width: 1px;
+      border-top-style: solid;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      margin-bottom: 0;
+      .print-btn{
+        display: none;
+      }
+      .name strong{
+        color: $font-color;
+      }
+    }
+    .info-section{
+      padding: 20px 20px 0;
+      border-width: 0;
+      .section-1{
+        display: none;
+      }
+      .section-2{
+        padding: 0;
+        border-width: 0;
+        width: 100%;
+        .name{
+          background-color: #fff;
+
+          strong{
+            color: $font-color;
+          }
+        }
+        .property-list{
+          border-width: 0;
+          border-bottom-width: 1px;
+          border-bottom-style: solid;
+          border-right-width: 1px;
+          border-right-style: solid;
+          margin-top: -1px;
+          .item{
+            background-color: #fff;
+            border-top-width:1px ;
+            border-top-style: solid;
+            border-left-width: 1px;
+            border-left-style: solid;
+            border-right-width: 0;
+            border-bottom-width: 0;
+            max-width: 33.3333%;
+            min-width: 33.3333%;
+            .icon{
+              display: none;
+            }
+            .text .title{
+              color: $font-color;
+              @include font-size(13);
+              font-weight: 400;
+            }
+          }
+        }
+      }
+      .section-3,
+      .section-4{
+        width: 49%;
+        margin-bottom: 20px;
+        .info-box{
+          background-color: #fff;
+          .tip{
+            display: none;
+          }
+          .title{
+            color: $font-color;
+            @include font-size(13);
+            font-weight: 400;
+          }
+          .img-holder{display: none}
+        }
+      }
+
+      &.alt{
+        .section-3, .section-4{
+          width: 100%;
+        }
+      }
+    }
+    .info-section-2{
+      display: block;
+      background: #fff;
+      padding: 0;
+      border-width: 0;
+      .hold{
+        display: block;
+        padding: 0 20px;
+      }
+      .box-1{
+        width: 100%;
+        padding: 0;
+        border-right-width: 0;
+        .title{
+          color: $font-color;
+          @include font-size(13);
+          font-weight: 400;
+        }
+      }
+      .box-2{
+        width: 100%;
+        padding: 20px;
+        border-width:1px;
+        border-style: solid;
+        @include box-treatment;
+        .title{
+          color: $font-color;
+          @include font-size(13);
+          font-weight: 400;
+        }
+        .mark{
+          color: $font-color;
+        }
+      }
+      .announce{
+        padding: 20px;
+        strong{color: $font-color}
+        margin-bottom: 20px;
+      }
+      .holder{
+        padding: 20px;
+        border-width:1px;
+        border-style: solid;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+
+}

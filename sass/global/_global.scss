@@ -1,0 +1,500 @@
+.module-1 {
+    width: 100%;
+    height: auto;
+    position: relative;
+    @include box-treatment;
+    @include flexbox;
+    @include justify-content(flex-end);
+
+    .content {
+        padding: 45px 100px 80px 100px;
+        position: relative;
+        max-width: 660px;
+
+        &:after {
+            content: '';
+            display: block;
+            background: url("../../images/icons/icon-carrot-down-right.svg") no-repeat 50% 50%;
+            @include background-size(cover);
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            z-index: 10;
+            bottom: 20px;
+            right: 15px;
+        }
+
+        h3 {
+            margin: 10px 0;
+        }
+        p {
+            margin: 0;
+            @include font-size(16);
+        }
+    }
+
+    .icon {width: 68px;}
+    .stripes {
+        display: block;
+        position: absolute;
+        left: 65px;
+        bottom: 20px;
+        width: 60px;
+        height: 30px;
+
+        img, svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    @include breakpoint(tablet) {
+        @include justify-content(center);
+        .content {
+            padding: 60px 30px 80px 30px;
+            text-align: center;
+
+            .icon {
+                display: inline-block;
+            }
+
+            .stripes {left: 40px;}
+        }
+    }
+}
+
+.module-slides {
+    width: 100%;
+    height: auto;
+    @include box-treatment;
+    @include flexbox;
+    @include justify-content(flex-end);
+    position: relative;
+
+
+
+    .slider-for{
+      position: absolute;
+      z-index: 1;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      .slick-list{
+        width: 100%;
+        height: 100%;
+      }
+      .slick-track{
+        height: 100%;
+      }
+      .img{
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        @include background-size(cover);
+
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background-color: #000;
+          opacity: 0.5;
+          z-index: 1;
+        }
+        &:before {
+          content: '';
+          display: block;
+          background: url("../../images/patterns/honeycomb-how-it-works.png") no-repeat 50% 50%;
+          width: 269px;
+          height: 422px;
+          @include vertical-align;
+          left: 0;
+          z-index: 2;
+        }
+      }
+    }
+    .slider-nav{
+      .slick-list{
+        padding: 0 !important;
+      }
+    }
+
+    .content {
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        max-width: 660px;
+        padding: 90px 90px 40px 90px;
+        @include box-treatment;
+
+        & * {
+          outline: none !important;
+        }
+    }
+
+    .title {
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        margin: 0 0 80px 0;
+    }
+
+    .stripes-2 {
+        background: url("../../images/icons/bg-stripes-2.png") no-repeat 50% 50%;
+        @include background-size(cover);
+        width: 104px;
+        height: 51px;
+        position: absolute;
+        bottom: 45px;
+        right: -52px;
+    }
+
+    .slide {
+        width: 100%;
+        text-align: center;
+
+        .icon {
+            display: inline-block;
+            width: 84px;
+            height: 84px;
+
+            img, svg {
+                width: 100%;
+                height: 100%;
+                color: $color-1-alt-1;
+                fill: $color-1-alt-1;
+            }
+        }
+        .name {
+            margin: 15px 0;
+            color: #fff;
+        }
+        p {
+            color: #fff;
+            margin: 0;
+        }
+    }
+
+    @include breakpoint(tablet) {
+        @include justify-content(center);
+        .content {
+            padding:55px 30px 80px 30px;
+
+            .stripes-2 {
+                right: 50%;
+                margin: 0 -52px 0 0;
+                bottom: -25px;
+            }
+        }
+    }
+}
+
+.module-current {
+    width: 100%;
+    height: auto;
+    position: relative;
+    @include box-treatment;
+    @include flexbox;
+    @include justify-content(flex-start);
+    background-color: white;
+
+    &:after {
+        content: '';
+        display: block;
+        background: url("../../images/icons/bg-stripes.png") no-repeat 50% 50%;
+        @include background-size(cover);
+        width: 104px;
+        height: 51px;
+        position: absolute;
+        top: -25px;
+        right: 20px;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 660px;
+        @include box-treatment;
+        padding:70px;
+
+        .title {
+            @include font-size(22);
+            color: $primary-color;
+        }
+
+        .list {
+            width: 100%;
+        }
+
+        .item {
+            width: 100%;
+            border-bottom: 1px solid #f1f1f1;
+            padding: 25px 0;
+            @include flexbox;
+            @include flex-wrap(wrap);
+
+            &:last-child {border-bottom: none;}
+
+            .img-frame {
+                width:140px;
+                height: 140px;
+                position: relative;
+                margin: 0 16px 0 0;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    right: 8px;
+                    bottom: 8px;
+                    border-right: 5px solid #fff;
+                    border-bottom: 5px solid #fff;
+                    border-top: 5px solid transparent;
+                    border-left: 5px solid transparent;
+                }
+            }
+            .text {
+                width: calc(100% - 156px);
+                @include flex-grow(1);
+
+                .name {
+                    @include font-size(19);
+                    color: $font-color;
+                    display: block;
+                    margin: 0 0 5px 0;
+
+                    a {
+                        color: $primary-color;
+                        @include font-size(19);
+                    }
+                }
+                .bid {
+                    width: 100%;
+                    display: block;
+                    @include font-size(12);
+                    color: $font-color;
+                }
+                .timer {
+                    margin: 5px 0 0;
+                    width: 100%;
+                    display: block;
+                    color: $color-4;
+                    font-weight: bold;
+                    @include font-size(12);
+                    font-style: normal;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(tablet) {
+        @include justify-content(center);
+        &:after {display: none;}
+        .content {
+            padding:40px 30px;
+
+            .item {
+                .img-frame {
+                    width: 120px;
+                    height: 120px;
+                }
+                .text {
+                    width: calc(1005 - 136px);
+                }
+            }
+
+        }
+    }
+    @include breakpoint(mobile-large) {
+        .content {
+            .btn-2 {
+                display: block;
+                width: 160px;
+                margin: 15px auto 0;
+            }
+        }
+    }
+}
+
+.module-spacer-1 {
+    width: 100%;
+    height: auto;
+    position: relative;
+    @include box-treatment;
+    @include flexbox;
+    padding: 20px;
+    padding-top: 15%;
+
+    @include breakpoint(tablet) {display: none;}
+
+}
+
+.module-spacer-2 {
+    width: 100%;
+    height: auto;
+    position: relative;
+    @include box-treatment;
+    @include flexbox;
+    background-color: blue;
+    padding: 30px;
+
+    @include breakpoint(tablet) {
+        display: none;
+    }
+}
+
+.comb-pattern {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url("../../images/patterns/honeycomb-hero-bottom-right.png") no-repeat 0 0;
+    @include background-size(cover);
+    width:350px;
+    height: 510px;
+    z-index: 3;
+}
+
+.content {
+    @include box-treatment;
+    width: 100%;
+    padding: 20px 30px;
+
+    @include breakpoint(tablet){
+        padding: 20px;
+    }
+}
+
+.clear {
+    width: 100%;
+    clear: both;
+    height: 0;
+}
+
+
+.pagination{
+  width: 100%;
+  text-align: center;
+  padding: 30px 0 50px;
+
+  .container{
+    @include justify-content(center);
+  }
+
+  .prev{
+    border: 1px solid $color-3-alt-2;
+    width: 40px;
+    height: 50px;
+    @include box-treatment;
+    line-height: 50px;
+    text-align: center;
+    svg{
+      width: 20px;
+      height: 20px;
+      fill: $color-3-alt-2;
+      position: absolute;
+      top:50%;
+      left: 50%;
+      margin: -10px 0 0 -10px;
+    }
+    &:hover{
+      background-color: $primary-color;
+      svg{
+        fill: #fff;
+      }
+    }
+
+    &.disabled{
+      cursor: default;
+      background-color: $color-3-alt-1;
+      &:hover{
+        svg{
+          fill: $color-3-alt-2;
+        }
+      }
+    }
+  }
+  .number{
+    min-width: 50px !important;
+    padding: 0 2px !important;
+    height: 50px;
+    width: 50px;
+    @include font-size(13);
+    text-align: center;
+    color: $color-3-alt-3;
+    @include box-treatment;
+    border-top: 1px solid $color-3-alt-2;
+    border-bottom: 1px solid $color-3-alt-2;
+  }
+  .next{
+    border: 1px solid $color-3-alt-2;
+    width: 40px;
+    height: 50px;
+    @include box-treatment;
+    line-height: 50px;
+    text-align: center;
+    svg{
+      width: 20px;
+      height: 20px;
+      fill: $color-3-alt-2;
+      position: absolute;
+      top:50%;
+      left: 50%;
+      margin: -10px 0 0 -10px;
+    }
+    &:hover{
+      background-color: $primary-color;
+      svg{
+        fill: #fff;
+      }
+    }
+    &.disabled{
+      cursor: default;
+      background-color: $color-3-alt-1;
+      &:hover{
+        svg{
+          fill: $color-3-alt-2;
+        }
+      }
+    }
+
+  }
+  .of{
+    @include font-size(13);
+    span{
+      margin: 0 5px 0 10px;
+      line-height: 50px;
+    }
+    mark{
+      color: $color-1-alt-2;
+      line-height: 50px;
+    }
+  }
+}
+
+.full-height{
+  height: 100% !important;
+  &.tablet-auto-height{
+    @include breakpoint(tablet){
+      height: auto !important;
+    }
+  }
+}
+.fake-link{
+  cursor: pointer;
+}
+
+.overflow{
+  overflow: hidden;
+}
+
+.visualhidden{
+  position: absolute;
+  left: -999999px;
+  top: -999999px
+}

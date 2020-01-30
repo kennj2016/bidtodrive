@@ -1,0 +1,108 @@
+/*----- Variables --------------------------------------------*/
+/*--- All supporing stylyes shall be placed on this style sheet. These are classses that are used globally to style general elements as needed.----*/
+
+//--will align children to the top.
+
+.flex-v-top {
+    @include align-items(flex-start);
+}
+
+//--will align chjldren to the vertical center.
+.flex-v-center {
+    @include align-items(center);
+}
+
+//--will align children to the bottom.
+.flex-v-end {
+    @include align-items(flex-end);
+}
+
+//--will align children to the left.
+.flex-h-left {
+    @include justify-content(flex-start);
+}
+
+//will align children to the horizontal center.
+.flex-h-center {
+    @include justify-content(center);
+}
+
+//will align children to the right//
+.flex-h-right {
+    @include justify-content(flex-end);
+    @include align-content(flex-end);
+}
+
+//will make any element full width within it's parent.
+.full-width {
+    max-width: 100% !important;
+    width: 100%;
+    padding: 0;
+}
+
+.full-height{
+    height: 100%;
+}
+
+//will make a div full-height of a browser -- modules and or content will control min-height.
+.full-height-vh {
+    min-height: 100vh !important;
+}
+
+//applies the "fixed" propertery to an element.
+.bg-attach {
+    background-attachment: fixed;
+}
+
+//hides element on mobile media Query.
+.hide-mobile {
+    display: block;
+    @include breakpoint(mobile-large) {
+        display: none;
+    }
+}
+
+.bg-image {
+    background-image: url('../../images/bg/bg-1.jpg');
+    @include background-size(cover);
+    position: relative;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.45;
+        z-index: 1;
+    }
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("../../images/patterns/pattern.png") repeat 0 0;
+        z-index: 2;
+    }
+    > div {
+        position: relative;
+        z-index: 3;
+    }
+
+    @include breakpoint(tablet) {
+        &:after {
+            display: none;
+        }
+    }
+}
+.bg-grey {
+    background-color:#fafafa;
+}
+
+

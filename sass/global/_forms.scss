@@ -1,0 +1,548 @@
+.form {
+    width: 100%;
+    height: auto;
+    position: relative;
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include box-treatment;
+    padding: calc(#{$gridGutterWidth} / 2);
+
+    &.borders {
+        border-width: 1px;
+        border-style: solid;
+    }
+
+    * {
+        border-color: inherit;
+    }
+
+    //field does not support flex so we are using these classes on divs to wrap the block items.
+
+    .field-block-1 {
+        width: 100%;
+        position: relative;
+        @include flexbox;
+        @include flex-wrap(wrap);
+        @include box-treatment;
+
+    }
+
+    .field-block-2 {
+        width: 50%;
+        position: relative;
+        @include flexbox;
+        @include flex-wrap(wrap);
+        @include box-treatment;
+    }
+
+    .block-1 {
+        height: auto;
+        width: calc(100% - #{$gridGutterWidth});
+        margin: calc(#{$gridGutterWidth} / 2);
+        @include flexbox;
+        @include flex-wrap(wrap);
+        @include box-treatment;
+        @include flex-grow(1);
+        @include flex-direction(column);
+
+
+    }
+
+    .block-2 {
+        height: auto;
+        width: calc(50% - #{$gridGutterWidth});
+        margin: calc(#{$gridGutterWidth} / 2);
+        @include flexbox;
+        @include flex-wrap(wrap);
+        @include box-treatment;
+        @include flex-grow(1);
+        @include flex-direction(column);
+
+        @include breakpoint(mobile-large) {
+            width: calc(100% - #{$gridGutterWidth});
+            &.always-2{
+              width: calc(50% - #{$gridGutterWidth});
+              margin: calc(#{$gridGutterWidth} / 2);
+            }
+        }
+
+    }
+
+    .block-3 {
+        height: auto;
+        width: calc(33.333333% - #{$gridGutterWidth});
+        margin: calc(#{$gridGutterWidth} / 2);
+        @include flexbox;
+        @include flex-wrap(wrap);
+        @include box-treatment;
+        @include flex-grow(1);
+        @include flex-direction(column);
+
+        @include breakpoint(desktop-small) {
+            width: calc(50% - #{$gridGutterWidth});
+            &.block-3-until-mob{
+              width: calc(33.333333% - #{$gridGutterWidth});
+            }
+        }
+
+        @include breakpoint(mobile-large) {
+            width: calc(100% - #{$gridGutterWidth});
+            &.block-3-until-mob{
+              width: calc(100% - #{$gridGutterWidth});
+            }
+        }
+
+    }
+
+    .block-4 {
+        height: auto;
+        width: calc(25% - #{$gridGutterWidth});
+        margin: calc(#{$gridGutterWidth} / 2);
+        @include flexbox;
+        @include flex-wrap(wrap);
+        @include box-treatment;
+        @include flex-grow(1);
+        @include flex-direction(column);
+
+        @include breakpoint(desktop-small) {
+            width: calc(50% - #{$gridGutterWidth});
+        }
+
+        @include breakpoint(mobile-large) {
+            width: calc(100% - #{$gridGutterWidth});
+        }
+
+    }
+
+  .bigitem-3 {
+    @include flex(3 0 0);
+    margin: calc(#{$gridGutterWidth} / 2);
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include box-treatment;
+    @include flex-direction(column);
+    @include breakpoint(mobile-large) {
+      width: calc(100% - #{$gridGutterWidth});
+      min-width: calc(100% - #{$gridGutterWidth});
+      @include flex-grow(1);
+    }
+  }
+  .smallitem {
+    @include flex(1 0 0);
+    margin: calc(#{$gridGutterWidth} / 2);
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include box-treatment;
+    @include flex-direction(column);
+    @include breakpoint(mobile-large) {
+      width: calc(100% - #{$gridGutterWidth});
+      min-width: calc(100% - #{$gridGutterWidth});
+      @include flex-grow(1);
+    }
+  }
+  .smallitem-toggle {
+    width: 102px;
+    margin: calc(#{$gridGutterWidth} / 2);
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include box-treatment;
+    @include flex-direction(column);
+  }
+
+  .bigitem-flex {
+    @include flex(1);
+    margin: calc(#{$gridGutterWidth} / 2);
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include box-treatment;
+    @include flex-direction(column);
+  }
+
+
+    @include placeholder {
+        color: inherit;
+        font-weight: 300;
+        @include font-size(12);
+        opacity: 1;
+    }
+
+    label {
+        width: 100%;
+        height: auto;
+        padding: 8px 0;
+        @include font-size(13);
+    }
+
+    input.text, select, textarea, .dud {
+        overflow: auto;
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        width: 100%;
+        height: auto;
+        padding: 0 20px;
+        @include font-size(13);
+        border: 1px solid $color-3-alt-7;
+        background-color: #fff;
+        min-height: 55px;
+        color: $color-2-alt-1;
+
+        @include box-treatment;
+        @include flex-grow(1);
+        @include flexbox;
+        @include align-items(center);
+
+        &:focus {
+            color: $color-1-alt-2;
+            border: 1px solid $color-1;
+        }
+
+    }
+  textarea{
+    white-space: pre-wrap;
+  }
+
+    .error {
+        input {
+            color: $color-5;
+            border: 1px solid $color-5;
+        }
+    }
+    .pass {
+        position: relative;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 25px;
+            height: 25px;
+            background: url("../../images/icons/icon-check.svg") no-repeat 50% 50% $color-4;
+            @include background-size(60%);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    .selectize-input, .selectize-dropdown {
+        @include font-size(12);
+    }
+
+    .select {
+        width: 100%;
+        height: auto;
+        min-height: 55px;
+
+        @include flex-grow(1);
+        @include flexbox;
+        @include flex-wrap(wrap);
+        @include border-radius(0);
+        @include box-treatment;
+
+        .items {
+            border-width: 1px;
+            border-style: solid;
+            border-color: inherit;
+            @include border-radius(0);
+            @include flexbox;
+            @include flex-wrap(wrap);
+            @include align-items(center);
+
+
+            &.input-active, &.dropdown-active {
+
+            }
+
+        }
+
+    }
+
+    textarea {
+        @include box-treatment;
+        padding: 20px;
+      //  height: 200px !important;
+    }
+    .submit {
+        float: right;
+        border: none;
+        @include box-treatment;
+        height: 55px;
+        width: 130px;
+        background-color: $color-1-alt-1;
+        color: #fff;
+        @include transition-treatment_1;
+
+        &:hover {
+            background-color: #fff;
+            border: 1px solid $primary-color;
+            color: $primary-color;
+            @include transition-treatment_1;
+        }
+    }
+  .submit-right {
+    float: right;
+    border: none;
+    white-space: nowrap;
+    @include box-treatment;
+    height: 55px;
+    width: auto;
+    background-color: $color-1-alt-1;
+    color: #fff;
+    @include transition-treatment_1;
+
+    &:hover {
+      background-color: #fff;
+      border: 1px solid $primary-color;
+      color: $primary-color;
+      @include transition-treatment_1;
+    }
+
+    @at-root {
+      a#{&} {
+        line-height: 55px;
+        padding: 0 15px !important;
+
+      }
+    }
+  }
+
+  .submit-left {
+    float: left;
+    border: none;
+    white-space: nowrap;
+    @include box-treatment;
+    height: 55px;
+    width: auto;
+    background-color: $color-1-alt-1;
+    color: #fff;
+    @include transition-treatment_1;
+
+    &:hover {
+      background-color: #fff;
+      border: 1px solid $primary-color;
+      color: $primary-color;
+      @include transition-treatment_1;
+    }
+
+    @at-root {
+      a#{&} {
+        line-height: 55px;
+        padding: 0 15px !important;
+
+      }
+    }
+  }
+
+
+}
+
+input[type="password"] {
+  font:small-caption;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    @include opacity(0);
+    cursor: pointer;
+    @include box-treatment;
+}
+
+input[type="checkbox"] + label {
+    position: relative;
+    padding: 0;
+    font-size: 16px;
+    line-height: 2.5em;
+    cursor: pointer;
+    @include box-treatment;
+}
+
+input[type="checkbox"] + label:before {
+    top: 2px;
+    content: "";
+    display: inline-block;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    @include box-treatment;
+    margin-right: 10px;
+    @include font-size(12);
+}
+
+input[type="checkbox"]:checked + label:before {
+    color: #fff;
+    border: 1px solid $color-1;
+    background-image: url('../../images/icons/icon-check-blue.svg');
+    background-size: 55%;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+
+input[type="checkbox"]:checked + label {
+    cursor: pointer;
+    color: $color-1;
+}
+
+/*radio*/
+
+input[type="radio"] {
+    position: absolute;
+    @include opacity(0);
+    cursor: pointer;
+    @include box-treatment;
+}
+
+input[type="radio"] + label {
+    position: relative;
+    padding: 0;
+    font-size: 16px;
+    line-height: 2.5em;
+    cursor: pointer;
+    @include box-treatment;
+}
+
+input[type="radio"] + label:before {
+    top: 2px;
+    content: "";
+    display: inline-block;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #fff;
+    border: 1px solid #d1d1d1;
+    @include box-treatment;
+    @include border-radius(50%);
+    margin-right: 10px;
+}
+
+input[type="radio"]:checked + label:before {
+    background-color: #fff;
+    border: 4px solid $color-1-alt-1;
+
+}
+
+input[type="radio"]:checked + label {
+    cursor: pointer;
+    color:$color-1-alt-1;
+}
+
+.btn-1 {
+	
+    display: inline-block;
+    margin: 10px 0;
+    padding: 15px 10px;
+    text-align: center;
+    min-width:160px;
+    border: 1px solid inherit;
+    text-transform: uppercase;
+    @include font-size(15);
+    @include box-treatment;
+    font-weight: 500;
+    position: relative;
+
+    &.black {
+        border: 1px solid $font-color;
+        color: $font-color;
+
+        &:hover {
+            background-color: $font-color;
+            color: #fff;
+        }
+    }
+	
+    &.blue {
+        border: 1px solid $color-1;
+        color: $color-1-alt-2;
+
+        &:hover {
+            background-color: $color-1;
+            color: #fff;
+        }
+    }
+	
+	&.red {
+        border: 1px solid $color-6;
+        color: $color-6;
+
+        &:hover {
+            background-color: $color-6;
+            color: #fff;
+        }
+    }
+	
+  	.io-text{
+    display: none;
+  }
+	
+}
+
+.btn-2 {
+    padding:12px 15px;
+    text-align: center;
+    display: inline-block;
+    margin: 5px 0 0;
+    color: #fff;
+    text-transform: uppercase;
+    @include box-treatment;
+    position: relative;
+
+    &:after {
+        position: absolute;
+        transition: .3s;
+        content: '';
+        width: 0;
+        left: 50%;
+        bottom: 0;
+        height: 3px;
+        background: rgba(0,0,0,0.35);
+    }
+    &:hover:after {
+        width: 100%;
+        left: 0;
+    }
+
+  	&.adjust {
+    margin: 0;
+    min-height: 55px;
+    white-space: nowrap;
+    line-height: normal;
+  }
+	
+  	&.big {
+    padding:12px 40px;
+  }
+	
+  	.io-text {
+    display: none;
+  }
+
+    &.black {
+        background-color: $color-2-alt-1;
+
+    }
+	
+    &.blue {
+        background-color: $primary-color;
+    }
+	
+	&.red {
+        background-color: $color-6;
+    }
+	
+    &.green {
+      background-color: $color-4;
+      &:hover {
+        background-color: #fff;
+        color: $color-4;
+        border-color: $color-4;
+      }
+    }
+	
+}

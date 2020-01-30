@@ -1,0 +1,9 @@
+{
+    "require": {
+        "hellogerard/jobby": "^3.4",
+        "guzzlehttp/guzzle": "~6.0",
+        "vlucas/phpdotenv": "^3.6",
+        "illuminate/database": "^6.0",
+        "illuminate/events": "^6.0"
+    }
+}

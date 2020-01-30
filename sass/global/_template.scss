@@ -1,0 +1,731 @@
+.breadcrumbs {
+    padding: 40px 30px 30px 30px;
+    width: 100%;
+    display: block;
+    @include box-treatment;
+
+    p {
+        color: $font-color;
+
+        a {
+            position: relative;
+            padding:0 10px 0 0;
+            margin: 0 5px 0;
+            color: $color-1;
+
+            &:hover {text-decoration: none;}
+
+            &:after {
+                content: '';
+                display: block;
+                width: 12px;
+                height: 10px;
+                background: url("../../images/icons/icon-arrow.svg") no-repeat 50% 50%;
+                @include background-size(cover);
+                position: absolute;
+                right: 0;
+                top: 50%;
+                margin: -5px 0 0;
+            }
+        }
+        .home {
+            width: 22px;
+            height: 18px;
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 15px 0 0;
+            margin: 0;
+
+            img, svg {
+                width: 22px;
+                height: 18px;
+                color: $color-1;
+                fill: $color-1;
+            }
+        }
+    }
+
+    @include breakpoint(tablet) {
+        display: none;
+    }
+}
+
+.t1 {
+   position: relative;
+   width: 100%;
+   height: auto;
+
+   #main {
+     display: block;
+     min-height: 100vh;
+   }
+
+ }
+
+.space-fix{
+  .header .container .right .mobile-btn,
+  .header .container .right .login,
+  .header .container .right .logo-mobile{
+    @include breakpoint(desktop-small){
+     // height: 70px;
+    }
+  }
+  .header .container .right .logo-mobile{
+    @include breakpoint(desktop-small){
+    //  padding: 14px 10px;
+    }
+  }
+  .header .container .right .nav{
+    @include breakpoint(desktop-small){
+    //  top:70px;
+    //  height: calc(100% - 70px);
+    }
+  }
+}
+
+.t1-top-panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+
+  #main {
+    display: block;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sec-holder{
+    height: 100%;
+    width: 100%;
+    display: table;
+    border-collapse: collapse;
+    @include box-treatment;
+    @include breakpoint(tablet){
+     // height: auto;
+    }
+
+    .t1-top-panel-instance{
+      display: table-row;
+      .content{
+        padding-top: 70px;
+      }
+    }
+    .sec-holder-inner{
+      display: table-row;
+      height: 100%;
+      @include breakpoint(tablet){
+     //   height: auto;
+      }
+      .sec-1{
+        height: 100%;
+        overflow: auto;
+        overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch;
+        .content-box.full-width{
+          max-width: 100vw !important;
+          @include breakpoint(tablet){
+               // max-width: calc(100vw - 17px) !important;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.t2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  #main {
+    height: 100%;
+  }
+  .tablet-left-panel-opener-box{
+    display: none;
+
+    @include breakpoint(tablet){
+      display: block;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      z-index: 10;
+
+    }
+
+    @include placeholder{
+      font-size: 16px !important;
+      font-weight: 300 !important;
+      font-family: $brand-font-2;
+      color: $color-3-alt-2;
+    }
+    .holder{
+      width: 100%;
+      @include flexbox();
+      @include flex-wrap(nowrap);
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-color: $color-3-alt-2;
+    }
+    .input-search{
+      @include flex(1);
+      input{
+        width: 100%;
+        @include box-treatment;
+        height: 70px;
+        @include font-size(11);
+        padding-left: 50px;
+        background-image: url(../../images/icons/icon-search-dark.svg);
+        background-repeat: no-repeat;
+        @include background-size(15px 15px);
+        background-position: 15px center;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-color: $color-3-alt-2;
+        &:focus{
+          background-image: url(../../images/bg/icon-search-hover-2.svg);
+          @include background-size(15px 15px);
+          background-position: 15px center;
+          border-bottom-color: $primary-color;
+        }
+      }
+    }
+    .filter-opener{
+      width: 70px;
+      height: 70px;
+      @include box-treatment;
+      border-left-style: solid;
+      border-left-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-color: $color-3-alt-2;
+      cursor: pointer;
+      .icon{
+        width: 100%;
+        height: 100%;
+        @include flexbox;
+        @include justify-content(flex-start);
+        @include align-content(center);
+      }
+      svg, img{
+        margin: auto;
+        fill: $font-color;
+        width: 17px;
+        height: 17px;
+      }
+    }
+  }
+  .tablet-left-panel-close-box{
+    display: none;
+    @include breakpoint(tablet){
+      display: block;
+    }
+  }
+  .sec-holder{
+    height: 100%;
+    padding-top: 70px;
+    @include box-treatment;
+    @include breakpoint(desktop-small){
+      padding-top: 60px;
+    }
+  }
+  .sec-1{
+    width: 370px;
+    float: left;
+    background: #fff;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    &.transparent{
+      background: transparent;
+    }
+    @include breakpoint(desktop-small){
+      width: 300px;
+    }
+    @include breakpoint(tablet){
+      width: 100%;
+      position: fixed;
+      top:0;
+      left:0;
+      display: none;
+      z-index: 2;
+      padding-top: 60px;
+      @include box-treatment;
+      &.active{
+        display: block;
+        z-index: 222;
+      }
+    }
+  }
+  .sec-2{
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    z-index: 3;
+
+  }
+
+  .baron {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+    .baron__clipper{
+      overflow: hidden;
+      height: 100%;
+      white-space: nowrap;
+      &:hover{
+        .baron__bar{@include opacity(0.4)}
+      }
+      &.no-visible-scroll:hover{
+        .baron__bar{@include opacity(0)}
+      }
+    }
+    .baron__scroller {
+      overflow-y: scroll;
+      overflow-x: hidden !important;
+      white-space: normal;
+      @include box-treatment;
+      margin: 0;
+      border: 0;
+      padding: 0;
+    //  width: 100% !important;
+    //  min-width: 100% !important;
+    //  max-width: 100% !important;
+      height: 100%;
+      -webkit-overflow-scrolling: touch;
+    }
+    .baron__scroller::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+    .baron__bar {
+      position: absolute;
+      right: 2px;
+      z-index: 10;
+      width: 8px;
+      background-color: #c2c2c2;
+      @include opacity(0);
+      @include border-radius(8px);
+      @include transition-treatment_1;
+      @include breakpoint(tablet){
+        display: none;
+      }
+    }
+
+    .baron._scrollbar .baron__bar {
+      display: block;
+    }
+    .baron__control {
+      display: none;
+    }
+
+
+  }
+
+
+
+}
+
+.t2-top-panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  #main {
+    height: 100%;
+  }
+  .sec-1{
+    .baron__scroller{
+    //  width: 100% !important;
+    //  max-width: 100% !important;
+    //  min-width: 100% !important;
+    }
+  }
+  .sec-2{
+    .baron__scroller{
+    //  width: 100% !important;
+    //  max-width: 100% !important;
+    //  min-width: 100% !important;
+      @include breakpoint(tablet){
+    //    overflow-y: hidden !important;
+      }
+    }
+    .auction-detail .img-holder .slider-car{
+      @include breakpoint(desktop-small){
+        max-width: calc(100vw - 360px);
+      }
+      @include breakpoint(tablet){
+        max-width: calc(100vw - 40px);
+      }
+    }
+
+  }
+
+  .tablet-left-panel-opener-box{
+    display: none;
+
+    @include breakpoint(tablet){
+      display: block;
+    position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      z-index: 10;
+
+    }
+
+    @include placeholder{
+      font-size: 16px !important;
+      font-weight: 300 !important;
+      font-family: $brand-font-2;
+      color: $color-3-alt-2;
+    }
+    .holder{
+      width: 100%;
+      @include flexbox();
+      @include flex-wrap(nowrap);
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-color: $color-3-alt-2;
+    }
+    .input-search{
+      @include flex(1);
+      input{
+        width: 100%;
+        @include box-treatment;
+        height: 70px;
+        @include font-size(11);
+        padding-left: 50px;
+        background-image: url(../../images/icons/icon-search-dark.svg);
+        background-repeat: no-repeat;
+        @include background-size(15px 15px);
+        background-position: 15px center;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-color: $color-3-alt-2;
+        &:focus{
+          background-image: url(../../images/bg/icon-search-hover-2.svg);
+          @include background-size(15px 15px);
+          background-position: 15px center;
+          border-bottom-color: $primary-color;
+        }
+      }
+    }
+    .filter-opener{
+      width: 70px;
+      height: 70px;
+      @include box-treatment;
+      border-left-style: solid;
+      border-left-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-color: $color-3-alt-2;
+      cursor: pointer;
+      .icon{
+        width: 100%;
+        height: 100%;
+        @include flexbox;
+        @include justify-content(flex-start);
+        @include align-content(center);
+      }
+      svg, img{
+        margin: auto;
+        fill: $font-color;
+        width: 17px;
+        height: 17px;
+      }
+    }
+  }
+  .tablet-left-panel-close-box{
+    display: none;
+    @include breakpoint(tablet){
+      display: block;
+    }
+  }
+  .sec-holder{
+    height: 100%;
+    width: 100%;
+    display: block;
+
+    @include box-treatment;
+    @include breakpoint(desktop-small){
+      max-width: 100vw;
+    }
+    @include breakpoint(tablet){
+    //  height: auto;
+    }
+
+    .t2-top-panel-instance{
+     // display: table-row;
+
+      .content{
+        padding-top: 70px;
+      }
+    }
+    .sec-holder-inner{
+   //   display: table-row;
+      height: 100%;
+      @include breakpoint(tablet){
+     //   height: auto !important;
+      }
+
+      .sec-holder-box{
+        height: 100%;
+        @include flexbox();
+        width: 100%;
+      }
+    }
+  }
+  .sec-1{
+    width: 370px;
+  //  float: left;
+    background: #fff;
+    height: 100%;
+    overflow: hidden;
+    @include flexbox;
+    vertical-align: top;
+    @include align-content(stretch);
+    position: relative;
+    z-index: 1;
+    @include breakpoint(desktop-small){
+      width: 300px;
+    }
+    @include breakpoint(tablet){
+      width: 100%;
+      position: fixed;
+      top:0;
+      left:0;
+      display: none;
+      z-index: 2;
+      padding-top: 70px;
+      @include box-treatment;
+      &.active{
+        display: block;
+        z-index: 222;
+      }
+    }
+
+    .baron{
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+  .sec-2{
+    height: 100%;
+    position: relative;
+    z-index: 3;
+    overflow: auto;
+    @include flex(1);
+
+    vertical-align: top;
+  }
+
+  .baron {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+    .baron__clipper{
+      overflow: hidden;
+      height: 100%;
+      white-space: nowrap;
+      &:hover{
+        .baron__bar{@include opacity(0.4)}
+      }
+      &.no-visible-scroll:hover{
+        .baron__bar{@include opacity(0)}
+      }
+    }
+    .baron__scroller {
+      overflow-y: scroll;
+      overflow-x: hidden !important;
+      white-space: normal;
+      @include box-treatment;
+      margin: 0;
+      border: 0;
+      padding: 0;
+      //  width: 100% !important;
+      //  min-width: 100% !important;
+      //  max-width: 100% !important;
+      height: 100%;
+      -webkit-overflow-scrolling: touch;
+    }
+    .baron__scroller::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+    .baron__bar {
+      position: absolute;
+      right: 2px;
+      z-index: 10;
+      width: 8px;
+      background-color: #c2c2c2;
+      @include opacity(0);
+      @include border-radius(8px);
+      @include transition-treatment_1;
+      @include breakpoint(tablet){
+        display: none;
+      }
+    }
+
+    .baron._scrollbar .baron__bar {
+      display: block;
+    }
+    .baron__control {
+      display: none;
+    }
+
+
+  }
+
+
+
+}
+
+.baron-table {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  .baron__clipper{
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+
+    min-height: 0 !important;
+    max-height: inherit !important;
+    height: auto !important;
+
+    &.no-visible-scroll:hover{
+      .baron__bar{@include opacity(0)}
+    }
+  }
+  &:hover{
+    .baron__bar{@include opacity(0.4)}
+  }
+  .baron__scroller {
+    overflow-x: scroll !important;
+    overflow-y: hidden !important;
+    white-space: normal;
+    @include box-treatment;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    //  width: 100% !important;
+    //  min-width: 100% !important;
+    //  max-width: 100% !important;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+  .baron__scroller::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  .baron__bar {
+    position: absolute;
+    left: 2px;
+    z-index: 10;
+    width: 8px;
+    height: 6px;
+    bottom:0;
+    background-color: #c2c2c2;
+    @include opacity(0);
+    @include border-radius(8px);
+    @include transition-treatment_1;
+    @include breakpoint(tablet){
+      display: none;
+    }
+  }
+
+  .baron._scrollbar .baron__bar {
+    display: block;
+  }
+  .baron__control {
+    display: none;
+  }
+
+
+}
+
+#sticky{
+  @include opacity(0);
+  pointer-events: none;
+  display: none;
+  @include breakpoint(desktop-small){
+    display: block;
+    position: fixed;
+    bottom: 0;
+    z-index: 10000;
+    height: 20px;
+    left: 300px;
+    width: calc(100% - 300px);
+    background: #fff;
+    border-top: 1px solid $color-3-alt-8;
+    .baron__bar{
+      @include opacity(0.4);
+      bottom: 6px;
+    }
+    &.active{
+      @include opacity(1);
+      pointer-events: all;
+    }
+  }
+  @include breakpoint(tablet){
+    display: none;
+  }
+
+}
+
+.topScrollVisible{
+  @include breakpoint(desktop-small){
+    height: 50px;
+
+  }
+  @include breakpoint(tablet){
+    height: 0;
+    display: none;
+  }
+  .topScrollTableLength{
+    @include breakpoint(desktop-small){
+      width: 1200px;
+      margin: 0 30px;
+      height: 20px;
+    }
+    @include breakpoint(tablet){
+      height: 0;
+      display: none;
+      width: 0;
+      margin: 0;
+    }
+  }
+}
+
+.ios .t2-top-panel .baron .baron__clipper:hover .baron__bar{
+  @include opacity(0)
+}
+
+.chrome{
+  .t2-top-panel {
+    .sec-1{
+      .baron__scroller{
+          width: 100% !important;
+          max-width: 100% !important;
+          min-width: 100% !important;
+      }
+    }
+    .sec-2{
+      .baron__scroller{
+          width: 100% !important;
+          max-width: 100% !important;
+          min-width: 100% !important;
+      }
+    }
+  }
+
+}
